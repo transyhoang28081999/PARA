@@ -1,0 +1,1 @@
+Vai trò của Inboxes: Lưu trữ các công việc chưa được phân loại.

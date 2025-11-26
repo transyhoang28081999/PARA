@@ -1,0 +1,104 @@
+Trong vai trò của một nhà phát triển học liệu có kinh nghiệm 10 năm, bạn hãy thiết kế - căn chỉnh các tài liệu sau đây sang dạng code latex. 
+Các tiêu chuẩn của tài liệu như sau:
+Cấu trúc của một tài liệu lý thuyết (TLLT):
+I. Kiến thức cần nhớ
+[Nội dung Kiến thức cần nhớ]
+II. Các dạng bài tập
+	1. Dạng 1: [Tiêu đề dạng 1]
+		a. Phương pháp giải
+		b. Ví dụ minh họa
+	2. Dạng 2: [Tiêu đề dạng 2]
+		a. Phương pháp giải
+		b. Ví dụ minh họa
+	...
+	n. Dạng n: [Tiêu đề dạng n]
+		a. Phương pháp giải
+		b. Ví dụ minh họa
+III. Bài tập tự luyện
+Bài 1: [Đề bài 1]
+Bài 2: [Đề bài 2]
+...
+Bài k: [Đề bài k]
+IV. Lời giải và đáp án
+Bài 1: [Đáp án bài 1]
+Bài 2: [Đáp án bài 2]
+...
+Bài k: [Đáp án bài k]
+
+Yêu cầu bắt buộc:
++ Phân số thì sử dụng \dfrac.
++ Hệ phương trình thì sẽ sử dụng begin{cases}. Nếu phương trình thứ nhất của hệ có phân số thì để phần xuống dòng là \\[15pt].
++ Nếu hai dòng liên tiếp mà có phân số thì khi xuống dòng ở dòng trên sẽ để \\[15pt].
++ Với các bài tập và ví dụ, thì hai cái liên tiếp nhau sẽ cách nhau \\[15pt].
++ Căn lề bên trái, không thụt đầu dòng.
++ Kết thúc một câu bắt buộc phải có dấu câu (dấu "." hoặc "," hoặc ";" hoặc ":"), không được để trống.
++ Tuyệt đối không được để dòng cách, ví dụ, nếu để:
+[Dòng 1]
+[Khoảng cách trắng, không có nội dung gì]
+[Dòng 2]
+là không được. Phải để thành:
+[Dòng 1]
+[Dòng 2]
++ Cấu trúc môi trường:
+\documentclass[12pt]{article}
+\usepackage[utf8]{vietnam}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\usepackage{enumitem}
+\geometry{a4paper, margin=2cm}
+
+\renewcommand\thesection{\Roman{section}}        % I, II, III
+\renewcommand\thesubsection{\arabic{subsection}} % 1, 2, 3
+\renewcommand\thesubsubsection{\alph{subsubsection}} % a, b, c
+
+\title{[Tiêu đề]}
+\author{ VYStudy }
+\date{[Ngày tháng năm]}
+
+\begin{document}
+
+\maketitle
+[Nội dung các phần của tài liệu]
+\end{document}
+
+Quy chuẩn trình bày của Phần Kiến thức cần nhớ:
+
+Quy chuẩn trình bày của Phần Các dạng bài tập:
+*Trong phần ví dụ minh họa: 
+	+ Hai ví dụ liên tiếp nhau sẽ cách nhau \\[15pt].
+	+ Cấu trúc của một bài Ví dụ sẽ là:
+\textbf{Ví dụ:} [Đề bài ví dụ]\\[15pt]
+\textit{Lời giải:}\\[10pt]
+[Nội dung phần giải]
+
+Quy chuẩn trình bày của Phần bài tập tự luyện:
++ Hai bài tập liên tiếp sẽ cách nhau \\[15pt], không dùng \bigskip.
++ Một đề bài sẽ có dạng: \textbf{Bài 1:} [Nội dung đề bài].
+
+Quy chuẩn trình bày của Phần Lời giải và đáp án:
++ Hai bài tập liên tiếp sẽ cách nhau \\[15pt], không dùng \bigskip.
++ Dạng của một bài:
+\textbf{Bài 1:}\\
+[Nội dung lời giải]
+
+Chú ý:
++ begin{enumerate}
+...
+end{enumerate}
+thì: 
+	++ Kết thúc nội dung trong các \item phải là dấu chấm.
+	++ Để \end{enumerate}\\[15pt] là sai, phải để \end{enumerate} và không có \\ nào cả.
+
+Hình ảnh:
++ Định dạng png, kích thước 4:3, 1:1.
++ Để trong thư mục "Ảnh": Đường dẫn: Ảnh/image_[số hiệu].
+
+Lưu ý đặc biệt: Ở trong tài liệu trên chỉ có phần bài tập tự luyện. 
+Bạn hãy tạm thời đừng làm bất kì cái gì liên quan đến phần khác (Kiến thức cần nhớ, Các dạng bài tập, Lời giải và đáp án). 
+Các phần 1.1, 1.2, ... trong file trên, bạn hãy bỏ tiêu đề, nhập các nội dung bài tập lại với nhau rồi đánh số lại giúp tôi.
+
+
+"Chuyển bài trên thành dạng latex theo quy chuẩn mà tôi đã đặt ra, bạn hãy để là Bài 14. 
+Bức ảnh thứ 3 là dạng rút gọn của P, bạn có thể dùng ngay mà không cần trình bày rút gọn. 
+Cách trình bày bạn có thể linh hoạt sáng tạo trong quy chuẩn cho TLLT, còn nội dung thì tuyệt đối không tự ý thay đổi."
+

@@ -1,0 +1,212 @@
+<HTML>
+<!-- Hoc D. Ngo --- Jan 10, 2005 -->
+<HEADER><TITLE>How To Set Up Surrogate Fonts </TITLE></HEADER>
+
+<BODY BACKGROUND=#FFFFFF text=#000000 link=#000099 vlink=#ee0000 alink=#6600ff>
+<CENTER>
+
+<H1>How To Set Up Surrogate Fonts</H1>
+<p>&nbsp;</p>
+</CENTER>
+
+
+If you encounter display problem with Unicode characters where
+ a single Unicode character appears as two empty square boxes, you should read this
+article to find out how to fix it.  Specifically, this problem occurs when your Unicode character is
+greater than U+FFFF (65635 decimal) and your Unicode font can handle only characters that are
+less than 64K in value.
+
+<H2>1. What is a surrogate character?</H2>
+
+Unicode characters can range in scalar values from 0 to over a million.  
+Characters above 64K (greater than U+FFFF or 65635) are called supplementary Unicode characters.
+The entire range of Unicode characters is divided into 17 blocks of 64K values each.  
+Each block is referred to as a plane and is numbered starting from 0 as follows:
+
+<UL>
+<LI>Plane 0: contains U+0000 thru U+FFFF.  This is commonly known as the Basic Multilingual Plane (BMP).
+<LI>Plane 1: contains U+10000 thru U+1FFFF.  
+<LI>Plane 2: contains U+20000 thru U+2FFFF.  
+  The majority of characters in this plane are Unicode Extension B (Hán/Hàn/Nh?t/Nôm).
+
+<LI>Plane 3: contains U+30000 thru U+3FFFF.  
+
+<LI>...............  
+
+<LI>Plane 16: contains U+100000 thru U+10FFFF.  
+     <p>
+</UL>
+
+Note that all characters in Plane 0 can be represented as a single 16-bit value.
+Characters in other planes are greater than 64K and can be represented as a single 32-bit value (UCS-4) or 
+a pair of two 16-bit values (UTF-16).
+In the latter representation the pair is commonly called surrogate pair, which consists
+of a high-order 16-bit surrogate and a low-order 16-bit surrogate.
+<p>
+
+Unfortunately Windows knows and processes only 16-bit Unicode characters by default.
+When Windows encounters a surrogate pair, it thinks there are two distinct 16-bit characters
+and simply displays as such.  This turns out to be always two empty square boxes.
+The reason is that each of the 16-bit surrogate piece is a forbidden 16-bit character in
+the Unicode standards and is represented as  an empty square box in Unicode fonts; 
+only the combination of the two surrogate pieces
+together yields a single Unicode character.
+
+<p>
+
+To make the long story short:
+<UL>
+<LI> Surrogate characters are representations of Unicode characters greater than 64K.  In practical terms, when a Unicode
+character is 5 or 6 significant hex digits long such as U+1FFAB or U+2AB45, 
+it is represented by a surrogate pair.
+<p>
+<LI> If your text contains surrogates, they simply appear as two empty square boxes unless 
+you tell Windows to use surrogate fonts by appropriate settings in Windows registry.
+<p>
+</UL>
+
+
+<H2>2. How to set up Windows to display surrogate characters?</H2>
+
+There are three steps:
+<H3>3.1 Install SURREG.EXE</H3>
+
+The first step is to install surreg.exe (1.3 MB), which is downloadable from Microsoft website:
+<UL>
+<A HREF="http://www.microsoft.com/downloads/details.aspx?displaylang=zh-cn&FamilyID=1A8B048F-C76F-4E55-A0CF-E695CEF87C81">http://www.microsoft.com/downloads/details.aspx?displaylang=zh-cn&FamilyID=1A8B048F-C76F-4E55-A0CF-E695CEF87C81</A>
+</UL>
+or specifically click here to download the file:
+<UL>
+<A HREF="http://download.microsoft.com/download/OfficeXPStandard/Patch/1.0/NT45XP/CN/surreg.exe">
+http://download.microsoft.com/download/OfficeXPStandard/Patch/1.0/NT45XP/CN/surreg.exe</A>
+</UL>
+<H3>3.2 Install Surrogate Fonts</H3>
+
+If you have no fonts for supplementary characters, you can download some from the Internet for free.
+At the present time the author of WinVNKey knows a few fonts:
+<UL>
+<LI> Plane 1:  CODE2001.ZIP (207,345 bytes), which covers a number of characters in Plane 1 (U+10000 through U+1FFFF):
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp; 
+<A HREF="http://home.att.net/~jameskass/code2001.htm">
+http://home.att.net/~jameskass/code2001.htm</A>
+<p>
+
+<LI> Plane 2:  
+<A HREF="http://prdownloads.sourceforge.net/vietunicode/hannomH.zip?download">HannomH.zip</A> (27 MB, 
+high resolution) and 
+<A HREF="http://prdownloads.sourceforge.net/vietunicode/hannom.zip?download">Hannom.zip</A> (19 MB, 
+low resolution), both of which contain two fonts:
+<UL>
+<LI> Font "HAN NOM A", containing Han Nom characters in Extension A (Plane 0)
+<LI> Font "HAN NOM B", containing Han Nom characters in Extension B (Plane 2)
+</UL>
+These fonts and a number of Vietnamese Unicode fonts can be downloaded from
+<p> &nbsp;&nbsp;&nbsp;&nbsp; 
+<A HREF="http://sourceforge.net/project/showfiles.php?group_id=41991">
+http://sourceforge.net/project/showfiles.php?group_id=41991</A>
+</UL>
+ 
+
+<H3>3.3 Set Up Windows Registry</H3>
+
+The last step is to set up Windows registry.  According to Microsoft<p>
+&nbsp;&nbsp;&nbsp;&nbsp; 
+<A HREF="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/intl/unicode_192r.asp">
+http://msdn.microsoft.com/library/default.asp?url=/library/en-us/intl/unicode_192r.asp</A> <p>
+
+users have to set up Windows registry as follows:
+
+<PRE>
+          [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\LanguagePack] 
+              SURROGATE=(REG_DWORD)0x00000002
+
+          [HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\International\Scripts\42]
+               IEFixedFontName=(Surrogate Font Face Name)
+               IEPropFontName=(Surrogate Font Face Name)
+</PRE>
+
+Additional information is available at
+<UL>
+<LI> <A HREF="http://www.i18nguy.com/surrogates.html">http://www.i18nguy.com/surrogates.html<A>:
+ detailed explanation of these registry entries
+<LI><A HREF="http://www.daouyen.com/NomDoc/CJKVB.htm">
+http://www.daouyen.com/NomDoc/CJKVB.htm</A>: instructions in Vietnamese
+</UL>
+
+Based on the information obtained from the websites above, WinVNKey provides a user-interface 
+to help users change the registry easily:
+
+<H3>Setting 1</H3>
+This setting tells Windows to load Uniscribe, which is an engine to process surrogate characters
+<PRE>
+    [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\LanguagePack] 
+    SURROGATE=(REG_DWORD)0x00000002 
+</PRE>
+
+<H3>Setting 2</H3>
+This setting specifies the names of fixed and proportional fonts for Internet Explorer to use
+to display surrogate characters
+<PRE>
+    [HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\International\Scripts\42] 
+    IEFixedFontName=[Surrogate Font Face Name] 
+    IEPropFontName=[Surrogate Font Face Name] 
+</PRE>
+
+<H3>Setting 3</H3>
+This setting is for Windows XP systems only and is optional. 
+Basically, this setting specifies the fallback fonts for characters in supplementary planes.
+You can specify as many planes as you like.
+
+<PRE>
+     [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsNT\CurrentVersion\LanguagePack\SurrogateFallback] 
+     Plane1=(Name for fallback font for characters in Plane 1)
+     Plane2=(Name for fallback font for characters in Plane 2)
+     ... etc. ... 
+</PRE>
+
+<H2>3. How to use WinVNKey to change surrogate registry?</H2>
+
+The three registry settings above can be changed by using WinVNKey as follows:
+<P>
+         Click on Run button ==> Preferences  ==> Surrogate Fonts
+<p>
+Note there are no OK/Cancel buttons on the "Surrogate Fonts" page.
+Any change you make to the page will become effective immediately.
+
+<p>
+<p>
+After setting up surrogate registry with supplementary fonts, you can test if the system works.
+You can browse several websites that use supplementary characters and check if you can see them.
+These sites are listed in
+<UL>
+<LI> <A HREF="http://www.i18nguy.com/surrogates.html">http://www.i18nguy.com/surrogates.html<A>
+<LI><A HREF="http://www.daouyen.com/NomDoc/CJKVB.htm">
+http://www.daouyen.com/NomDoc/CJKVB.htm</A>
+</UL>
+Specifically,
+
+<UL>
+<LI> <A HREF="http://www.daouyen.com/NomDoc/CuTranLacDao.htm">
+http://www.daouyen.com/NomDoc/CuTranLacDao.htm</A>
+<LI> <A HREF="http://www.i18nguy.com/unicode/plane1-utf-16.html">
+http://www.i18nguy.com/unicode/plane1-utf-16.html</A>
+
+<LI> <A HREF="http://www.i18nguy.com/unicode-plane1-utf8.html">
+http://www.i18nguy.com/unicode-plane1-utf8.html</A>
+
+<LI> <A HREF="http://www.i18nguy.com/unicode-example-plane1.html">
+http://www.i18nguy.com/unicode-example-plane1.html</A>
+
+<LI> <A HREF="http://www.i18nguy.com/unicode/unicode-example-intro.html">
+http://www.i18nguy.com/unicode/unicode-example-intro.html</A>
+
+<LI> <A HREF="http://homepage.mac.com/thgewecke/BeyondBMP.html">
+http://homepage.mac.com/thgewecke/BeyondBMP.html</A>
+
+
+</UL>
+
+
+
+</BODY></HTML>

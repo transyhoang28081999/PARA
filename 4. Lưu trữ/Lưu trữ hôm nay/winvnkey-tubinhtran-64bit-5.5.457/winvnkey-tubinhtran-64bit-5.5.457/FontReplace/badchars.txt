@@ -1,0 +1,34 @@
+; List of bad character codes that are indisplayable in Windows applications
+;
+; Single-byte character sets such as VISCII, VPS For Windows, etc
+; suffer a display problem for a number of upper case characters.
+; When this happens, just replace the upper case characters with the corresponding
+; lower case characters, then switch to the capital version of the font for these
+; characters. 
+;
+; This file lists the code values for these problematic characters.
+; Mostly, they are in the control regions 
+;      - 0x00 thru 0x2F
+;      - 0x80 thru 0x9F
+;      - plus the non-breaking space char 0xA0 and the soft-hyphen 0xAD
+;        (The soft-hyphen is e^~ in VISCII or u+ in TCVN3 (ABC).
+;
+; It can be listed in hexadecimal with prefix 0x or in decimal.
+;
+; Usage:
+; Winvnkey's RTF converter uses info in this file.
+;
+; Suppose you want to convert an RTF file from Unicode fonts to VISCII
+; font MinhQuan.  If the new character in MinhQuan happens to be at
+; risk (i.e., its code value is listed in this file), the RTF converter
+; will replace it with a lower case character and change the font
+; to MinhQuanH (Hoa or capital version of MinhQuan).
+;
+; -- Hoc D. Ngo -- Tue Sep 14 21:58:55 PDT 2004
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[Bad Characters]
+0x00-0x1F=bad
+0x80-0x9F=bad
+0xA0=bad
+;0xAD=bad

@@ -1,0 +1,63 @@
+; @File ActibeDB.list
+; @Version: 2
+; @Date: Aug 26, 2007
+; @Author: Hoc D. Ngo, hoc96@yahoo.com
+; --------------------------------------------------------
+; This file contains a number of directories in the first column.
+; WinVNKey processes these directories and builds databases
+; exactly in the order specified below.  The directory name
+; is defined to be the database name as well.
+;
+; 1. Format of this file
+;  - First column is the directory name
+;  - Second column specifies the group ID, which is a positive integer
+;
+; The directory name, when converted to lowercase, is also used as a key
+; in the localization files display\English.ini and display\Vietnamese.ini.
+; The key is associated with the long or short name of the database.
+; The Han/Nom dialog can display the database name in either the long
+; or short form.  You can search for strings "LongName" and "ShortName"
+; in the said localization files to see the detailed names.
+; 
+; 2. What is the group ID?
+;
+; All databases that have common properties can be put together
+; into the same group and each group can be identified by a positive
+; integer called group ID.  The group IDs are used to sort the list
+; of databases. Thus all databases (i.e. directory names) of the same
+; group ID will appear next to each other in the list of databases.
+;
+; For example, suppose you have 8 databases, which can
+; be split into 3 groups.  You can number these groups arbitrarily
+; as 1, 2, 3 or 5, 20, 70.
+;
+; The main purpose of the group IDs is to sort the databases in
+; the dropdown list of the first combobox in the Han Nom dialog.  
+; All databases are sorted in ascending order of the group IDs
+; in the dropdown list.
+;
+; 3. Group Properties
+; Users can select/de-select a database by clicking the checkbox
+; in the dropdown list of the first combobox in the Han Nom dialog. 
+; However, at most ONE database of each group can be selected.
+; Thus if a group has more than one database, select (enable)
+; one database in the group will automatically de-select
+; all other databases in that group.
+;
+; Note: Han-Pinyin dir contains both Traditional and Simplified Chinese data.
+; --------------------------------------------------------------------------
+
+; Folder name     |  Group
+Han-Viet          |      1     ; Han means Chinese, "-Viet" means DB contains Vietnamese pronunciation
+Nom-Viet          |      2     ; Nom means classic Vietnamese
+HanPhonThe-Viet   |      3     ; HanPhonThe means Traditional Chinese
+;HanGianThe-Viet  |      4     ; HanGianThe means Simplified Chinese
+Cantonese-Viet    |      5     ; Cantonese means tie^'ng Qua?ng DDo^ng
+Han-4Corner       |      6     ; Tu+' Gia'c Hie^.u Ma~
+
+Han-Pinyin        |      7
+HanPhonThe-Pinyin |      8     ; Pinyin means Bi'nh A^ma, "-Pinyin" means DB contains Pinyin pronunciation
+HanGianThe-Pinyin |      9
+Han-Cangjie       |     10     ; Cangjie means Thu+o+ng Hie^.t
+
+

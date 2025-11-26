@@ -1,0 +1,38 @@
+; File: "My Own List Of Font Names.txt"
+; Directory: <Installation Directory>\FontReplace
+;
+; Author: Hoc D. Ngo  - September 13, 2003
+; Email: hoc96@yahoo.com
+; http://Winvnkey.sourceforge.net
+;
+; This file lists font names, one per line, for WinVNKey to display
+; in the tabbed pages "Replace Fonts" and  "Check Charsets".
+;
+; 1) Replace Fonts:
+;     When the user right clicks inside the list box, he can choose which
+; type of font name list to display when clicking on an arrow in the list box.
+; If he chooses the third type:  "Display My Own List Of Font Names",
+; then all the names listed in this file will be used.
+;
+; 2) Check Charsets
+;     The purpose of this page is to show the charset name for a given
+; font name.  WinVNKey can get the font names from the system fonts,
+; from RTF files, or from Font Conversion Tables.  But if you have
+; a font name that does not appear in these places at all, 
+; you should put the font name in this file so that WinVNKey can
+; read and display it.
+;
+; The font names must be listed exactly as they would appear in
+; Windows applications, such as MS Word in the combobox that lists
+; all the fonts installed on the system.  This means the font names
+; are case-sensitive and should not have leading and trailing spaces.
+; Lines beginning with a semi-colon and blank lines are ignored.
+;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+ÁnhMinhH 1.1
+Heo May Hoa 1.1
+HoangYenH 1.1
+MinhQuânH 1.1
+PhuongThaoH 1.1
+ThaHuongH 1.1
+UHoàiH 1.1

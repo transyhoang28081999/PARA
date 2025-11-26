@@ -1,0 +1,127 @@
+﻿<html >
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<title>Cách Hạ Tải Và Cài Đặt Phông Hán Nôm </title>
+
+<h1 align=center>Cách Hạ Tải Và Cài Đặt Phông Hán Nôm</h1>
+
+<p>Có hai loại phông chữ Hán Nôm: chữ Unicode đơn (dạng U+xyzt với 4 số mã) 
+và chữ Unicode kép (dạng U+2xyzt hoặc U+Fxyzt với 5 số mã).   Nếu máy của bạn không có đúng
+ phông Hán Nôm, bạn sẽ thấy mỗi chữ Hán Nôm hiện ra như một
+ ô vuông trống nếu là chữ Unicode đơn, và hai ô vuông trống nếu là
+ chữ Unicode kép.  
+
+Trên nguyên tắc có thể có tất cả 65535 chữ dạng U+xyzt, 65535 chữ dạng U+2xyzt, và 65535 chữ dạng U+Fxyzt.
+Nhưng hiện nay không có một phông nào chứa đầy đủ cả 196,605 (=3*65,535) chữ.  Tất cả các phông hiện nay chỉ chứa
+một phần nhỏ các chữ mà thôi.  Chẳng hạn:
+
+<UL>
+<LI> Phông  "HAN NOM A" chứa những chữ sau đây:
+<UL>
+<LI> Radicals Supplements [U+2F00 to U+2FD5 (214 glyphs)] 
+<LI> CJK Unified Ideographs Extension A [U+3400 to U+4DB5 (6572 glyphs)]  
+<LI> CJK Unified Ideographs [U+4E00 to U+9FA5 (20,832 glyphs)] 
+<LI> Private Han Nom Ideographs in Plane 0 [U+Exyz]
+<LI> Private Han Nom Ideographs in Plane F  [U+Fxyzt]
+</UL>
+
+<LI> Phông  "HAN NOM B" chứa những chữ dạng U+2xyzt in Plane 2:
+<UL>
+<LI>CJK Unified Ideographs Extension B [U+20000 ? U+2A6D6 (42,702 glyphs)] 
+<LI> Fillers used by font designers on purpose [U+2A6D0 ...] 
+</UL>
+
+<LI> Phông   "Arial Unicode MS" chứa
+<UL>
+<LI> Hầu như tất cả các mẫu tự gốc Latinh, Hy Lạp, Cyrillic, v.v.
+<LI> CJK Unified Ideographs [U+4E00 to U+9FA5 (20,832 glyphs)] 
+</UL>
+</UL>
+
+
+<h2>A.  Hạ tải phông HAN NOM A</h2>
+Hạ tải và cài đặt phông <a
+     href="http://prdownloads.sf.net/winvnkey/HiRes-Hannom-A.exe?download">HAN
+     NOM A</a> font (11 MB exe file) từ  <a
+     href="http://sf.net/project/showfiles.php?group_id=39420">kho chứa</a>
+     của <a href="http://winvnkey.sf.net/">WinVNKey</a>
+
+
+<h2>B.  Hạ tải phông HAN NOM B</h2>
+Hạ tải và cài đặt phông
+     <a
+     href="http://prdownloads.sf.net/winvnkey/HiRes-Hannom-B.exe?download">HAN
+     NOM B</a> font (19 MB exe file) từ  <a
+     href="http://sf.net/project/showfiles.php?group_id=39420">kho chứa</a>
+     của  <a href="http://winvnkey.sf.net/">WinVNKey</a>
+
+<h2>C.  Hạ tải phông Arial Unicode MS</h2>
+   Đây là phông Unicode của Microsoft thường được phát hành chung với MS Office 2000 hoặc mới hơn.
+Hạ tải và cài đặt phông <a
+     href="http://www.star-italia.net/home/download/aruniupd.exe">Arial
+     Unicode MS</a> font (13 MB exe file) từ một website.
+ Nếu file này không còn lưu trữ tại đây, bạn có thể tìm kiếm 
+    <A href="http://www.google.com/search?hl=en&q=download+aruniupd.exe">download  aruniupd.exe<A>
+    trên <A href="http://www.google.com">google.com</A> và nếu bỏ thì giờ tìm kiếm, bạn sẽ thấy file này tại một website nào đó.
+
+
+<h2>D.  Cách cài đặt phông chữ Hán Nôm kép</h2>
+
+Khi gõ một chữ Hán hoặc Nôm mà thấy có hai ô vuông trống
+ hiện ra, bạn nên nhận ra ngay rằng hệ điều hành của máy
+ bạn hoặc phông của bạn chưa có khả năng xử lý dạng
+ chữ Unicode kép.  Trong trường hợp đó, bạn nên tuần tự cài đặt như sau:
+
+<ol>
+<li> Hạ tải và cài đặt phông
+<a href="http://download.microsoft.com/download/OfficeXPStandard/Patch/1.0/NT45XP/CN/surreg.exe">SURREG.EXE</a>
+(1.3 MB) từ Microsoft website.  Nhu liệu này cho phép Windows xử lý chữ Unicode dạng kép.   
+Nhu liệu này thường được phát hành chung với Office XP ấn bản Trung Hoa.</li>
+
+<li>Chạy WinVNKey để điều chỉnh Windows registry như sau:  nhấn lên nút Chạy
+ ==&gt; Sở thích (Preferences)  ==&gt; Phông Chữ Kép ==&gt; Nhấn nút &#8220;Mặc Định&#8221; .</li>
+ <li>Tắt và khởi động lại máy Windows</li>
+</ol>
+
+<p>
+<p>
+<h2>Chú thích về phông HAN NOM A và B</h3>
+
+<p>Hai phông Hán Nôm miễn phí này do một số học giả Việt Nam
+ (v.d. Quoc-Bao Do, baodo@t-online.de) và tình nguyện viên ở 
+trong nước cũng như hải ngoại thiết kế ròng rã hơn ba năm trời.
+Hai phông này thiết kế thành hai phiên bản:  
+phiên bản có độ phân giải cao và phiên bản có độ phân giải thấp: 
+<UL>
+<LI><a href="http://prdownloads.sf.net/vietunicode/hannom.zip?download">HanNom.zip</a>
+(cả hai phông Han Nom A and B dạng có độ phân giải thấp) và
+
+<LI><a href="http://prdownloads.sf.net/vietunicode/hannomH.zip?download">HanNomH.zip</a>
+(cả hai phông Han Nom A and B dạng có độ phân giải cao).
+</UL>
+
+<p>
+Các bộ phông này được phát hành vào đầu năm 2005 và hiện được
+ lưu trữ tại <a
+href="http://sf.net/project/showfiles.php?group_id=41991">kho phông</A> của <a href="http://vietunicode.sf.net/">VietUnicode website</a>. 
+
+Bạn nên luôn luôn thử cài đặt phiên bản có độ phân giải cao để được chữ đẹp. 
+ Nếu máy của bạn xử lý phông này không tốt, lúc đó bạn hãy thử dùng phiên bản có độ phân giải thấp.
+<p>
+
+Được sự đồng ý của anh Đỗ Quốc-Bảo, các phông này đã được tách rời 
+ra và đóng gói lại dưới dạng tệp exe để giúp cho người dùng cài đặt dễ dàng.  
+Các tệp exe này được phát hành tháng 9 năm 2005 và hiện được lưu trữ tại 
+<a  href="http://sf.net/project/showfiles.php?group_id=39420">kho phông</a>
+của <a href="http://winvnkey.sf.net/">WinVNKey</a>.
+</p>
+
+<p>
+<p><p><p>
+
+<H5>1. Cập nhật ngày 25 tháng 10 năm 2005 - Ngô Đình Học (hoc96@yahoo.com)</h5>
+<H5>2. Cập nhật ngày 3 tháng 5 năm 2006 - Ngô Đình Học (hoc96@yahoo.com)</h5>
+
+</body>
+
+</html>

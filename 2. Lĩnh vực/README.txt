@@ -1,0 +1,1 @@
+Định nghĩa Lĩnh vực: là những thứ không có thời hạn kết thúc.

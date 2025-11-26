@@ -1,0 +1,146 @@
+\subsection*{\textcolor{blue}{Dạng 4: Tìm điều kiện của tham số để phương trình thỏa mãn điều kiện cho trước}}
+
+Tìm giá trị của tham số để hệ phương trình nhận $(x_0; y_0)$ là nghiệm.
+
+Hệ phương trình
+\[
+\begin{cases}
+a x + b y = c \\
+a' x + b' y = c'
+\end{cases}
+\]
+có nghiệm $(x_0; y_0)$ khi và chỉ khi
+\[
+\begin{cases}
+a x_0 + b y_0 = c \\
+a' x_0 + b' y_0 = c'
+\end{cases}
+\]
+
+- Tìm giá trị của tham số để nghiệm của hệ thỏa mãn một số điều kiện khác.
+
+\textbf{Bước 1.} Dựa vào điều kiện của nghiệm thiết lập phương trình có ẩn là tham số.
+
+\textbf{Bước 2.} Giải phương trình tham số.
+
+\textbf{Bước 3.} Kết luận.
+
+%--- Ví dụ ---
+\vspace{1.5em}
+\textcolor{blue}{\textbf{Ví dụ:}} 
+Cho hệ phương trình
+\[
+\begin{cases}
+(m+1)x + n y = 3 \\
+2m x + y = 2
+\end{cases}
+\]
+Tìm $m, n$ để hệ phương trình có nghiệm $(x ; y) = (1 ; 2)$.
+
+\textbf{\textit{Hướng dẫn giải}}
+
+Hệ nhận $(x ; y) = (1 ; 2)$ là nghiệm nên:
+\[
+\begin{cases}
+(m+1) \cdot 1 + n \cdot 2 = 3 \\
+2m \cdot 1 + 2 = 2
+\end{cases}
+\]
+Giải hệ:
+\[
+\begin{cases}
+m + 2n = 2 \\
+2m + 2 = 2
+\end{cases}
+\]
+\[
+\begin{cases}
+m + 2n = 2 \\
+2m = 0
+\end{cases}
+\]
+\[
+\begin{cases}
+m + 2n = 2 \\
+m = 0
+\end{cases}
+\]
+\[
+\begin{cases}
+0 + 2n = 2 \\
+m = 0
+\end{cases}
+\]
+\[
+\begin{cases}
+n = 1 \\
+m = 0
+\end{cases}
+\]
+
+Vậy với 
+\[
+\begin{cases}
+m = 0\\
+n = 1
+\end{cases}
+\]
+hệ phương trình nhận $(x ; y) = (1 ; 2)$ là nghiệm.
+
+%--- Ví dụ mẫu ---
+\vspace{1.5em}
+\textcolor{blue}{\textbf{Ví dụ mẫu}}
+
+\textbf{Ví dụ 1.} Cho hệ phương trình
+
+\[
+\begin{cases}
+x + 2y = 3 \\
+2x + y = m-2
+\end{cases}
+\]
+
+Tìm $m$ để hệ phương trình có nghiệm duy nhất $(x_0; y_0)$ với $y_0 = x_0$.
+
+\textbf{\textit{Hướng dẫn giải}}
+
+Ta có
+\[
+\begin{cases}
+x + 2y = 3 \\
+2x + y = m-2
+\end{cases}
+\]
+Từ phương trình trên: $x = 3 - 2y$\\
+Thay vào phương trình dưới:
+\begin{align*}
+2(3 - 2y) + y &= m-2 \\
+6 - 4y + y &= m-2 \\
+6 - 3y &= m-2 \\
+3y &= 8 - m \\
+y &= \dfrac{8-m}{3}
+\end{align*}
+
+Khi đó:
+\[
+x = 3 - 2y = 3 - 2 \cdot \dfrac{8-m}{3} = \dfrac{9 - 16 + 2m}{3} = \dfrac{2m-7}{3}
+\]
+Vậy nghiệm của hệ là:
+\[
+\left(
+\dfrac{2m-7}{3} ;
+\dfrac{8-m}{3}
+\right)
+\]
+
+Yêu cầu $y_0 = x_0$ nên:
+\[
+\dfrac{2m-7}{3} = \dfrac{8-m}{3}
+\]
+\begin{align*}
+2m-7 &= 8-m \\
+3m &= 15 \\
+m &= 5
+\end{align*}
+
+Vậy với $m=5$, hệ phương trình có nghiệm duy nhất $(x_0 ; y_0)$ với $y_0 = x_0$.

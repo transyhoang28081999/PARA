@@ -1,0 +1,134 @@
+<html >
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=us-ascii">
+<title>How To Download And Set Up Han Nom Fonts </title>
+
+<h1 align=center>How To Download And Set Up Han Nom Fonts </h1>
+
+<p>Han Nom characters fall into two categories: single Unicode values (4 hex digits such as U+xyzt)
+and double or surrogate Unicode values (5 hex digits such as U+2xyzt and U+Fxyzt).   If your computer system does not have appropriate Han
+Nom fonts, each Han Nom character will appear as an empty square if it is single
+Unicode value and as two empty squares if double Unicode value.  
+
+In principle there are potentially 65,535 characters of the form U+xyzt, another 65,535 characters of the form U+2xyzt, and another 65,535 characters of the form U+Fxyzt.
+At the present time no single font can cover all these 196,605 (=3*65,535) characters.  Instead, existing fonts are known to cover a subset of these characters.
+For example,
+<UL>
+<LI> Font "HAN NOM A" covers:
+<UL>
+<LI> Radicals Supplements [U+2F00 to U+2FD5 (214 glyphs)] 
+<LI> CJK Unified Ideographs Extension A [U+3400 to U+4DB5 (6572 glyphs)]  
+<LI> CJK Unified Ideographs [U+4E00 to U+9FA5 (20,832 glyphs)] 
+<LI> Private Han Nom Ideographs in Plane 0 [U+Exyz]
+<LI> Private Han Nom Ideographs in Plane F  [U+Fxyzt]
+</UL>
+
+<LI> Font "HAN NOM B" covers all characters U+2xyzt in Plane 2:
+<UL>
+<LI>CJK Unified Ideographs Extension B [U+20000 ? U+2A6D6 (42,702 glyphs)] 
+<LI> Fillers used by font designers on purpose [U+2A6D0 ...] 
+</UL>
+
+<LI> Font "Arial Unicode MS" covers:
+<UL>
+<LI> Almost all Latin-based characters
+<LI> CJK Unified Ideographs [U+4E00 to U+9FA5 (20,832 glyphs)] 
+</UL>
+
+</UL>
+
+<h2>A. Download HAN NOM A</h2>
+Download and install <a
+     href="http://prdownloads.sf.net/winvnkey/HiRes-Hannom-A.exe?download">HAN
+     NOM A</a> font (11 MB exe file) from the <a
+     href="http://sf.net/project/showfiles.php?group_id=39420">archive</a>
+     of <a href="http://winvnkey.sf.net/">WinVNKey</a> 
+
+
+<h2>B. Download HAN NOM B</h2>
+Download and install
+     <a
+     href="http://prdownloads.sf.net/winvnkey/HiRes-Hannom-B.exe?download">HAN
+     NOM B</a> font (19 MB exe file) from the <a
+     href="http://sf.net/project/showfiles.php?group_id=39420">archive</a>
+     of <a href="http://winvnkey.sf.net/">WinVNKey</a>
+
+
+
+<h2>C. Download Arial Unicode MS</h2>
+
+Download and install <a
+     href="http://www.star-italia.net/home/download/aruniupd.exe">Arial
+     Unicode MS</a> font (13 MB exe file) from a website.  
+     This is a Microsoft Unicode font
+     usually available in MS Office 2000 and later.
+    If the file is no longer available, you can search for 
+    <A href="http://www.google.com/search?hl=en&q=download+aruniupd.exe">download  aruniupd.exe<A>
+    on <A href="http://www.google.com">google.com</A> and may be able to find the file is
+    available at some site. 
+
+<<b style="color:#FF0000;">
+<h3>Note</H3>  Normally reboot is not required after installation is completed.  Your 
+can use these fonts immediately.  However, you should 
+verify that the fonts are working properly by clicking on 
+the menu "Fonts and Colors".  This will display a dialog with 4 Nom characters.  If for some reason
+ some of them do not appear, you should reboot your system.
+</b>
+
+<h2>D. How to set up fonts for Han Nom surrogate characters?</h2>
+
+When you type a single Han or Nom character and see two empty squares appear, you should
+know that your Windows setup and/or your current font is not capable of
+handling double Unicode characters.  Please follows these steps exactly
+in the order shown below:
+
+<ol>
+<li> Download and install 
+<a href="http://download.microsoft.com/download/OfficeXPStandard/Patch/1.0/NT45XP/CN/surreg.exe">SURREG.EXE</a>
+(1.3 MB) from Microsoft website. This software allows Windows to process double Unicode characters. It is normally included in the Chinese
+edition of Office XP.
+
+<li>Run
+     WinVNKey to set up Windows registry as follows: click on the Run button ==&gt; Preferences ==&gt; Surrogate
+     Fonts ==&gt; Click on the &#8220;Default&#8221; button.</li>
+ <li>Restart your Windows machine</li>
+</ol>
+
+<p>
+<p>
+<h2>E. Notes on HAN NOM A and B fonts</h3>
+
+<p>These
+two public domain fonts were designed by a group of Vietnamese scholars (e.g. Quoc-Bao Do, baodo@t-online.de)
+and volunteers in Vietnam and overseas in the course of over three years. They are available in high and low
+resolution versions and were originally released in 2005 as 
+<UL>
+<LI><a href="http://prdownloads.sf.net/vietunicode/hannom.zip?download">HanNom.zip</a>
+(both Han Nom A and B fonts in low resolution) and 
+
+<LI><a href="http://prdownloads.sf.net/vietunicode/hannomH.zip?download">HanNomH.zip</a>
+(both Han Nom A and B fonts in low high resolution).
+</UL>
+These fonts can be found at the <a
+href="http://sf.net/project/showfiles.php?group_id=41991">font archive</a>
+of <a href="http://vietunicode.sf.net/">VietUnicode website</a>.
+
+You should always try the high resolution first for best display. 
+If the display does not come out well, then try the low resolution
+version.</p>
+
+With permission from Quoc-Bao Do, these fonts were repackaged separately by Hoc D.
+Ngo as exe files in September 2005 to support automatic installation. These exe files are now available for
+download from the <a
+href="http://sf.net/project/showfiles.php?group_id=39420">archive</a>
+of <a href="http://winvnkey.sf.net/">WinVNKey</a>.</p>
+
+<p>
+<p><p><p>
+
+Updated October 25, 2005 by Hoc D. Ngo (hoc96@yahoo.com)<br>
+Updated May 3, 2006 by Hoc D. Ngo (hoc96@yahoo.com)
+</body>
+
+</html>
+
